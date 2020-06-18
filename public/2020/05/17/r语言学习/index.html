@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.68.3" />
+
+
+<title>R语言学习 - A Hugo website</title>
+<meta property="og:title" content="R语言学习 - A Hugo website">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="https://mooc1-3.chaoxing.com/mycourse/studentcourse?courseId=208815890&amp;clazzid=17811461&amp;ut=s&amp;enc=1483a809c2925838c79e62e68bf0991b&amp;cpi=107470798&amp;openc=e585e41278e06d8004f544d63c12a67c">More</a></li>
+    
+    <li><a href="https://gitee.com/iaagbrx">My Gitee</a></li>
+    
+    <li><a href="https://github.com/IAAG-BRX">My GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">R语言学习</h1>
+
+    
+    <span class="article-date">2020-05-17</span>
+    
+
+    <div class="article-content">
+      
+
+
+<div id="r学习资源" class="section level2">
+<h2>R学习资源</h2>
+<table>
+<thead>
+<tr class="header">
+<th>相关学习资源</th>
+<th align="right"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>期刊</td>
+<td align="right"><a href="https://journal.r-project.org/">R Journal</a></td>
+</tr>
+<tr class="even">
+<td>图书</td>
+<td align="right"><a href="https://bookdown.org/home/">R Bookdown</a></td>
+</tr>
+<tr class="odd">
+<td>博客</td>
+<td align="right"><a href="https://www.r-bloggers.com/">R Bloggers</a></td>
+</tr>
+<tr class="even">
+<td>教程</td>
+<td align="right"><a href="https://www.w3cschool.cn/r/r_overview.html">W3CSchool</a></td>
+</tr>
+<tr class="odd">
+<td>视频</td>
+<td align="right"><a href="https://mooc1.chaoxing.com/course/97619275.html?_from_=208815890_17811461_117047994_ad050eece3f6dddeb97c04d1c57108ef">R语言基础</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="r语言学习" class="section level2">
+<h2>R语言学习</h2>
+<div id="r-简介" class="section level3">
+<h3>R 简介</h3>
+<p>R是一套由数据操作、计算和图形展示功能整合而成的套件。包括：有效的数据存储和处理功能，一套完整的数组（特别是矩阵）计算操作符，拥有完整体系的数据分析工具，为数据分析和显示提供的强大图形功能，一套（源自S语言）完善、简单、有效的编程语言（包括条件、循环、自定义函数、输入输出功能）。</p>
+</div>
+<div id="练习r新冠" class="section level3">
+<h3>练习：R+新冠</h3>
+<pre class="r"><code>library(nCov2019)
+library(ggplot2)
+library(treemap)
+library(treemapify)
+library(dplyr)
+
+x&lt;-get_nCov2019()
+d&lt;-x[&#39;湖北&#39;,]
+ggplot(d, aes(area = confirm, fill = name, label = paste(name, confirm, sep=&quot;\n&quot;)))+
+  geom_treemap()+
+  geom_treemap_text(frontface = &quot;italic&quot;, colour = &quot;white&quot;, place = &quot;centre&quot;,grow = TRUE)</code></pre>
+<div class="figure">
+<img src="images/武汉.png" alt="武汉" width="750" height="500" />
+<p class="caption">武汉</p>
+</div>
+</div>
+<div id="练习r地图" class="section level3">
+<h3>练习：R+地图</h3>
+<pre class="r"><code>url&lt;-&quot;https://geo.datav.aliyun.com/areas/bound/100000.json&quot;
+url
+length(url)
+library(rjson)
+require(rjson)
+json&lt;-rjson::fromJSON(file = url)
+json
+summary(json)
+class(json)
+
+toJSon&lt;-rjson::toJSON(json)
+write(toJSon,&quot;cn100000.json&quot;)
+cn100000&lt;-rjson::fromJSON(file = &quot;cn100000.json&quot;)
+
+cn&lt;-sf::st_read(dsn=&quot;cn100000.json&quot;,stringsAsFactors=F)
+library(ggplot2)
+p&lt;-ggplot()+
+   geom_sf(data = cn,aes(fill=name))</code></pre>
+<div class="figure">
+<img src="images/中国.png" alt="中国" width="750" height="500" />
+<p class="caption">中国</p>
+</div>
+</div>
+</div>
+<div id="r-blogdown学习" class="section level2">
+<h2>R blogdown学习</h2>
+<div id="r-blogdown是什么" class="section level3">
+<h3>R blogdown是什么</h3>
+<p>R语言的一个扩展包，用来制作网站的工具。
+可以用非常简洁的方式快速搭建静态网页构成的网站。
+虽然名字里有“博客”（blog）字样，但并不仅限于博客。非常适合搭建一个科研小组的展示窗口。
+基于 markdown 扩展语法，可以在网页中方便地插入图表、脚注、数学公式、R 代码等元素。
+非常容易将 bookdown 生成的论文转化成网页展示。
+非常易于维护，迁移，备份。</p>
+</div>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

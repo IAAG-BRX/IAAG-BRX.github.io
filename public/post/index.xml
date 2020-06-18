@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on A Hugo website</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>R语言学习</title>
+      <link>/2020/05/17/r%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/17/r%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/</guid>
+      <description>R学习资源相关学习资源期刊R Journal图书R Bookdown博客R Bloggers教程W3CSchool视频R语言基础R语言学习R 简介R是一套由数据操作、计算和图形展示功能整合而成的套件。包括：有效的数据存储和处理功能，一套完整的数组（特别是矩阵）计算操作符，拥有完整体系的数据分析工具，为数据分析和显示提供的强大图形功能，一套（源自S语言）完善、简单、有效的编程语言（包括条件、循环、自定义函数、输入输出功能）。
+练习：R+新冠library(nCov2019)library(ggplot2)library(treemap)library(treemapify)library(dplyr)x&amp;lt;-get_nCov2019()d&amp;lt;-x[&amp;#39;湖北&amp;#39;,]ggplot(d, aes(area = confirm, fill = name, label = paste(name, confirm, sep=&amp;quot;\n&amp;quot;)))+geom_treemap()+geom_treemap_text(frontface = &amp;quot;italic&amp;quot;, colour = &amp;quot;white&amp;quot;, place = &amp;quot;centre&amp;quot;,grow = TRUE)武汉
+练习：R+地图url&amp;lt;-&amp;quot;https://geo.</description>
+    </item>
+    
+    <item>
+      <title>课堂讨论</title>
+      <link>/2020/05/17/%E8%AF%BE%E5%A0%82%E8%AE%A8%E8%AE%BA/</link>
+      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/17/%E8%AF%BE%E5%A0%82%E8%AE%A8%E8%AE%BA/</guid>
+      <description>欢迎来到我的博客互联网是近代最伟大的发明之一。它突破了国家和地域的界限，改变着世界政治、经济、文化、生活的方式，把世界连接在了一起。它已经成为人类生活中不可或缺的重要组成部分，但同时也带来许多意想不到、需要解决的问题。如何解决这些问题，即如何进行互联网治理，已经成为全球诸多国家和地区政府和社会关注的重大课题，也是我们这门课需要探讨和学习的问题。
+课堂讨论1. 什么是互联网精神？● 讨论：开放、平等、快速、分享、协作
+2. 什么是互联网、互联网+、互联网思维？● 讨论：一句话表述你对互联网上述认识
+3. 什么是Infodemic？● 讨论：从信息角度表述你对Infodemic信息疫情，信息恐慌的认识，如何治理呢？会不会成为一个新的领域？研究方向会有哪些？
+4. 什么是污名化Stigma？● 讨论：从信息角度表述你对污名化的认识，如何治理呢？
+5. 国际疫情中的信息化，中国老百姓需要什么样的信息？● 讨论：从信息角度表述你对疫情信息国际化的认识？你认为现阶段，中国老百姓需要什么样的信息？华人需要什么样的信息？国际上需要什么样的中国方案？
+6. 你认为新媒体时代的网站应该是一种什么样的存在？● 讨论：你对网站的认识？ 新媒体的视角，网站？社交媒体的背景，网站怎么生存？
+7. 什么是分布式？分布式信息系统？为什么要分布式？你知道的分布式有哪些知名信息系统？● 讨论：你对分布式的认识？有哪些知名的分布式系统和理念？
+8. 什么是信息的可视化？你对信息可视化的认识？为什么要信息的可视化？可视化的重要地位？可视化的工具？可视化的手段？● 讨论：你对分可视化的认识？有哪些知名的分布式系统和理念？
+9. 什么是互联网治理和信息治理？为什么要治理？治理的手段有哪些？作业合作给了我们什么启示？● 讨论：你对互联网治理和信息治理的认识？
+课后作业[✔] 社区信息化方案
+[✔] infodemic治理
+[✔] 当政府遇上互联网
+[✔] git理解和学习
+……
+</description>
+    </item>
+    
+  </channel>
+</rss>
